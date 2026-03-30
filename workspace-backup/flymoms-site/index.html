@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLYMOMS | Inspiring the Next Generation of Aviators</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0A1628;
+      --accent: #FF6B35;
+      --accent-light: #FFB347;
+      --text: #1F2937;
+      --light: #F8FAFC;
+      --gradient: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--light);
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: var(--primary);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1456324854829-49a1cd6e2a71?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      opacity: 0.4;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.7) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255,107,53,0.5);
+    }
+
+    .mission {
+      padding: 6rem 2rem;
+      background: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .mission-text {
+      font-size: 1.25rem;
+      text-align: center;
+      color: #4B5563;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .impact-card {
+      background: var(--light);
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .impact-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .impact-card p {
+      color: #6B7280;
+      font-size: 1rem;
+    }
+
+    .donate-section {
+      padding: 6rem 2rem;
+      background: var(--primary);
+      text-align: center;
+    }
+
+    .donate-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .donate-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 1.25rem 3.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+    }
+
+    .donate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255,107,53,0.5);
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      background: #0D1B2A;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2.5rem;
+      }
+      .tagline {
+        font-size: 1.1rem;
+      }
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="logo">FLY<span>MOMS</span></h1>
+      <p class="tagline">Opening the skies to those who dream of flight</p>
+      <a href="#donate" class="hero-cta">Support Our Mission</a>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <p class="mission-text">
+        FLYMOMS provides scholarships and resources to inspire the next generation of aviators. 
+        We empower teen students with the training, mentorship, and opportunities they need to pursue 
+        careers and hobbies in aviation — opening the skies to those who dream of flight.
+      </p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <h3>🎓 Scholarships</h3>
+          <p>Funding flight training, ground school, and certification costs for students in need.</p>
+        </div>
+        <div class="impact-card">
+          <h3>👨‍🏫 Mentorship</h3>
+          <p>Connecting aspiring aviators with experienced pilots for guidance and inspiration.</p>
+        </div>
+        <div class="impact-card">
+          <h3>✈️ Flight Opportunities</h3>
+          <p>Creating pathways to airfield experiences, discovery flights, and career exposure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section" id="donate">
+    <div class="container">
+      <h2>Help Us Take Flight</h2>
+      <p>Every donation brings a young dreamer closer to the cockpit.<br>Together, we can make aviation accessible to all.</p>
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 FLYMOMS. All rights reserved.</p>
+    <p>FLYMOMS is a nonprofit organization dedicated to inspiring the next generation of aviators.</p>
+  </footer>
+</body>
+</html>
