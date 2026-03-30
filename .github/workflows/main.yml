@@ -1,0 +1,20 @@
+name: Daily Backup
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run backup
+        run: |
+          echo "Backup $(date)" > backup.txt
+          git config --global user.email "casey@example.com"
+          git config --global user.name "Casey"
+          git add .
+          git commit -m "Daily backup $(date)" || echo "No changes"
+          git push
